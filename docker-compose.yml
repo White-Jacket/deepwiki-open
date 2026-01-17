@@ -3,8 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    ports:
-      - "${PORT:-8001}:${PORT:-8001}"  # API port
+    ports: # API port
       - "${FRONT_PORT:-3000}:3000"  # Next.js port
     environment:
       - PORT=${PORT:-8001}
