@@ -5,6 +5,8 @@ services:
       dockerfile: Dockerfile
     ports: # API port
       - "${FRONT_PORT:-3000}:3000"  # Next.js port
+    env_file:
+      - stack.env
     environment:
       - PORT=${PORT:-8001}
       - NODE_ENV=production
